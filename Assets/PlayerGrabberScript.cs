@@ -35,11 +35,11 @@ public class PlayerGrabberScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            z_coord -= 0.1f;
+            z_coord -= 0.02f;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            z_coord += 0.1f;
+            z_coord += 0.02f;
         }
         Mathf.Clamp(z_coord, min_z, max_z);
     }

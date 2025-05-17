@@ -11,15 +11,17 @@ public class HoleScript : MonoBehaviour
     void Start()
     {
         Score_Shop = GameObject.Find("ScoreAndShopManager").GetComponent<ScoreAndShopScript>();
+        Task_Manager = GameObject.Find("ScoreAndShopManager").GetComponent<TaskManagerScript>();
     }
-    public void AddToScore(float points)
+    public void AddToScore(float points, string type)
     {
         float addValue = value_multiplier * points;
         if (Score_Shop.TaskSelected)
         {
-            if (Task_Manager.selected_task.HasHole(gameObject))
+            if (Task_Manager.cur_tasks[Task_Manager.selected_task_index].HasHole(gameObject))
             {
-                Score_Shop.points += addValue;
+                Task_Manager.Subtract(Task_Manager.selected_task_index, type);
+                print(type + " needed remaining: " + Task_Manager.cur_tasks[Task_Manager.selected_task_index].needed_spheres.ToString());
             }
         }
         else

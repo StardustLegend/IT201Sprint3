@@ -9,8 +9,21 @@ public class ScoreAndShopScript : MonoBehaviour
     public float points = 0;
     public bool TaskSelected = false;
     public TMP_Text Point_Text;
+    public TMP_Text ToggleTaskButtonText;
     void Update()
     {
         Point_Text.text = "Points: " + points.ToString();
+        if (TaskSelected)
+        {
+            ToggleTaskButtonText.text = "Deselect Tasks";
+        }
+        else
+        {
+            ToggleTaskButtonText.text = "Select Tasks";
+        }
+    }
+    public void ToggleTaskSelect()
+    {
+        TaskSelected = !TaskSelected;
     }
 }
