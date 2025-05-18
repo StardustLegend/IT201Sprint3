@@ -93,7 +93,7 @@ public class TaskManagerScript : MonoBehaviour
                 NewTask(i);
             }
         }
-        TaskText.text += "\n Order Statement from " + cur_tasks[selected_task_index].company_name + "- \n" + cur_tasks[selected_task_index].task_description;
+        TaskText.text += "\n Order Statement from " + cur_tasks[selected_task_index].company_name + "- \n" + cur_tasks[selected_task_index].task_description + "\n \n Point payout: " + cur_tasks[selected_task_index].point_payout.ToString() + " points";
     }
     public void Subtract(int task_index, string type)
     {

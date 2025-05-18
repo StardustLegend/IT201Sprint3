@@ -6,19 +6,16 @@ using UnityEngine;
 
 public class GrabScript : MonoBehaviour
 {
-
     public bool Grabbed = false;
-
     public Rigidbody rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
-
-
     private void OnMouseDown()
     {
         Grabbed = true;
+        rb.velocity = Vector3.zero;
     }
     public void OnMouseUp()
     {
